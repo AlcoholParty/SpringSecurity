@@ -172,11 +172,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     } // configure
 
     // 세션 제거 방식 - 로그아웃시 세션이 제거되지 않는 문제 해결
-    // 1. 세션이 생성되거나 페기될 때 호출되는 HttpSessionEventPublisher 클래스를 리스너로 등록 - 세션 제거 준비
-    // 2. 로그아웃시 HttpSessionEventPublisher 클래스의 sessionDestroyed(HttpSessionEvent event) 메서드가 호출되고
-    //    ApplicationContext.publishEvent(HttpSessionDestroyedEvent) 를 실행하여 HttpSessionDestroyedEvent 를 발생 - 세션 제거 시작
-    // 3. HttpSessionDestroyedEvent 가 실행되면 onApplicationEvent(SessionDestroyedEvent event) 가 호출되고
-    //    여기에서 removeSessionInformation(sessionId) 구문을 실행하는데 이 구문이 Set 에 저장된 SessionInformation 를 삭제 - 세션 제거 완료
+    // 1. 세션이 생성되거나 페기될 때 호출되는 HttpSessionEventPublisher를 리스너로 등록 - 세션 제거 준비
+    // 2. 로그아웃시 HttpSessionEventPublisher의 sessionDestroyed(HttpSessionEvent event) 메소드가 호출되고
+    //    ApplicationContext.publishEvent(HttpSessionDestroyedEvent)를 실행하여 HttpSessionDestroyedEvent를 발생 - 세션 제거 시작
+    // 3. HttpSessionDestroyedEvent가 실행되면 onApplicationEvent(SessionDestroyedEvent event)가 호출되고
+    //    여기에서 removeSessionInformation(sessionId) 구문을 실행하는데 이 구문이 Set 에 저장된 SessionInformation를 삭제 - 세션 제거 완료
     @Bean
     public static ServletListenerRegistrationBean httpSessionEventPublisher() {
         return new ServletListenerRegistrationBean(new HttpSessionEventPublisher());
