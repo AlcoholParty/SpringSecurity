@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor // 모든 필드 값을 파라미터로 받는 생성자 어노테이션
 @Builder // 빌더 어노테이션 - 빌더를 통해 해당 객체의 필드 값을 재생성 한다.
 @ToString // 객체를 불러올때 주솟값이 아닌 String 타입으로 변경해주는 어노테이션
-@Entity(name="Member") // Entity 어노테이션 - 괄호안에는 테이블명과 똑같이 작성한다.
+@Entity(name = "Member") // Entity 어노테이션 - 괄호안에는 테이블명과 똑같이 작성한다.
 public class Member {
     @Id // 기본키 어노테이션 - 기본키 설정 (PRIMARY KEY)
     // @GeneratedValue(strategy = GenerationType.IDENTITY) - AUTO_INCREMENT - MySQL에서 시퀀스 역할을 담당한다.

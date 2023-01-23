@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SignUpController {
-    // 로그인 및 회원가입 인증 서비스
+    // 회원가입 및 로그인 인증 서비스
     @Autowired
     SignUpService signUpService;
 
